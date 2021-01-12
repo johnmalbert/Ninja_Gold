@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://use.fontawesome.com/fe0b1ed089.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="navbar justify-space-between align-middle bg-dark">
+        <a href="/reset"><button class="btn btn-primary">Start Over</button></a>
+        <p style="margin: 10px;">
+            About Me:
+            <a href="https://www.github.com/johnmalbert"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/john-m-albert/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/chasethealberts"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </p>
+    </div>
+    <main>
+        <div class="container-fluid bg-secondary text-center p-3">
+            <div class="row align-bottom">
+                <div class="col md-2"> <h1>Current Gold:</h1> <h1 class="total">{{request.session.gold_amount}}</h1></div>
+                <div class="col md-4-align-bottom "><h1 class="instructions">Try to get to 75 Golden Nuggets in under 5 moves!</h1></div>
+                <div class="col md-2"><h1>Total Moves:</h1> <h1 class="total">{{request.session.counter}}</h1></div>
+            </div>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col md-3 p-3">
+                        <h3>Farmhouse</h3>  
+                        <h4>Earns 10-20 Pieces</h4>
+                        <img src="{% static 'img\farmhouse.jpg' %}" alt="farm">
+                        <button class="btn btn-warning text-light" value="0" name="casino">FIND GOLD</button>
+                        <a href="/farmhouse">FIND GOLD</a>
+                    </div>
+                    <div class="col md-3 sm-6 p-3">
+                        <h3>Cave</h3>
+                        <h4>Earns 5-10 Pieces</h4>
+                        <img src="{% static 'img\cave.jpg' %}" alt="cave">
+                        <button class="btn btn-warning text-light" value="1" name="casino">FIND GOLD</button>
+                        <a href="/cave">FIND GOLD</a>
+                    </div>
+                    <div class="col md-3 sm-6 p-3">
+                        <h3>House</h3>
+                        <h4>Earns 2-5 Pieces</h4>
+                        <img src="{% static 'img\house.jpg' %}" alt="house">
+                        <button class="btn btn-warning text-light" value="2" name="casino">FIND GOLD</button>
+                        <a href="/house">FIND GOLD</a>
+
+                    </div>
+                    <div class="col md-3 sm-6 p-3">
+                        <h3>Casino</h3>
+                        <h4>-50 to +50 Pieces</h4>
+                        <img src="{% static 'img\casino.jpg' %}" alt="casino">
+                        <button class="btn btn-warning text-light" value="3" name="casino">FIND GOLD</button>
+                        <a href="/casino">FIND GOLD</a>
+                    </div>
+                </div>
+            </form> 
+            <!-- Activites -->
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Activity Log</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" style="padding: 5px;">{% for line in request.session.activity_log %}{{line}}
+{% endfor %}</textarea>
+                      </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container-fluid p-3  bg-dark text-center text-muted">
+            <h3 class="footer-h3">Created by John Albert, 2021</h3>
+            <p>Images by @ChaseTheAlberts <a href="https://www.instagram.com/chasethealberts"><i class="fa fa-instagram" aria-hidden="true"></i></a></p>
+        </div>
+    </footer>
+</body>
+</html>

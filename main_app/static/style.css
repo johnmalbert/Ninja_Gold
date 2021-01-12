@@ -1,0 +1,42 @@
+.md-3{
+    margin: 20px;
+    border-radius: 50px;
+    background-color: white;
+}
+img{
+    max-width: 75%;
+    opacity: 80%;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px
+}
+a{
+    padding: 5px;
+}
+h1{
+    padding: 10px;
+    color: #05284e;
+    width: 50%;
+    margin: auto;
+}
+h1.instructions{
+    margin-top: 20px;
+    color: #05284e;
+    width: 100%;
+}
+h1.total{
+    color: #ffc107;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    width: 25%;
+    font-size: 50px;
+}
+h3, h4{
+    color: #05284e;
+}
+p{
+    color: #007bff;
+}
+.footer-h3{
+    color: #007bff;
+}

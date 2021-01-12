@@ -26,40 +26,36 @@
                 <div class="col md-4-align-bottom "><h1 class="instructions">Try to get to 75 Golden Nuggets in under 5 moves!</h1></div>
                 <div class="col md-2"><h1>Total Moves:</h1> <h1 class="total">{{request.session.counter}}</h1></div>
             </div>
-            <form action="/process_money" method="post">
-                {% csrf_token %}
+           
+               
                 <div class="row">
                     <div class="col md-3 p-3">
                         <h3>Farmhouse</h3>  
                         <h4>Earns 10-20 Pieces</h4>
                         <img src="{% static 'img\farmhouse.jpg' %}" alt="farm">
-                        <button class="btn btn-warning text-light" value="0" name="casino">FIND GOLD</button>
-                        <a href="/farmhouse">FIND GOLD</a>
+                        <a href="/farmhouse"><button class="btn btn-warning text-light">FIND GOLD</button></a>
                     </div>
                     <div class="col md-3 sm-6 p-3">
                         <h3>Cave</h3>
                         <h4>Earns 5-10 Pieces</h4>
                         <img src="{% static 'img\cave.jpg' %}" alt="cave">
-                        <button class="btn btn-warning text-light" value="1" name="casino">FIND GOLD</button>
-                        <a href="/cave">FIND GOLD</a>
+                        <a href="/cave"><button class="btn btn-warning text-light">FIND GOLD</button></a>
                     </div>
                     <div class="col md-3 sm-6 p-3">
                         <h3>House</h3>
                         <h4>Earns 2-5 Pieces</h4>
                         <img src="{% static 'img\house.jpg' %}" alt="house">
-                        <button class="btn btn-warning text-light" value="2" name="casino">FIND GOLD</button>
-                        <a href="/house">FIND GOLD</a>
+                        <a href="/house"><button class="btn btn-warning text-light" >FIND GOLD</button></a>
 
                     </div>
                     <div class="col md-3 sm-6 p-3">
                         <h3>Casino</h3>
                         <h4>-50 to +50 Pieces</h4>
                         <img src="{% static 'img\casino.jpg' %}" alt="casino">
-                        <button class="btn btn-warning text-light" value="3" name="casino">FIND GOLD</button>
-                        <a href="/casino">FIND GOLD</a>
+                        <a href="/casino"><button class="btn btn-warning text-light">FIND GOLD</button></a>
                     </div>
                 </div>
-            </form> 
+            
             <!-- Activites -->
             <div class="row">
                 <div class="col"></div>
